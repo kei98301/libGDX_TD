@@ -4,12 +4,12 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 [libGDX]: https://libgdx.badlogicgames.com/
 
 ## Collaborated with
- Minwoo Jang([jmw1038]), Youngin Cho([ChoYoungIn]), Seungwook Choi([seungwookchoi]), Yeoseul Cho().
+ Minwoo Jang([jmw1038]), Youngin Cho([ChoYoungIn]), Seungwook Choi([seungwookchoi]), Yeoseul Cho([yscho1219]).
 
 [jmw1038]: https://github.com/jmw1038
 [ChoYoungIn]: https://github.com/ChoYoungIn
 [seungwookchoi]: https://github.com/seungwookchoi
-
+[yscho1219]: https://github.com/yscho1219
 ## Commit Note
 17.02.02:[Minseok Koo] Tower overlap problem solving. 
 	(gamedev-td-core/src/gamedev/input/GameInputProcessor.java)
