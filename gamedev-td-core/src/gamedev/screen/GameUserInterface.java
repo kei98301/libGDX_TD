@@ -136,25 +136,27 @@ public class GameUserInterface {
 	private void initializeBuildTowerButtons() {
 		btnsBuildTower = new ArrayList<GDSprite>();
 		SpriteManager spriteManager = SpriteManager.getInstance();
-
+			
+		//modify(2017.02.16 20:35 By MinSeokKoo)
+		//Remove unnecessary towers.
 		GDSprite dirtTower = spriteManager.getTower(TowerType.Dirt_Tower);
 		GDSprite arrowTower = spriteManager.getTower(TowerType.Arrow_Tower);
 		GDSprite eggTower = spriteManager.getTower(TowerType.Egg_Tower);
-		GDSprite potionTower = spriteManager.getTower(TowerType.Potion_Tower);
-		GDSprite currencyTower = spriteManager.getTower(TowerType.Currency_Tower);
+		//GDSprite potionTower = spriteManager.getTower(TowerType.Potion_Tower);
+		//GDSprite currencyTower = spriteManager.getTower(TowerType.Currency_Tower);
 
 		int offset = 3, y = 13;
 		dirtTower.setPosition(Config.tileSize, y * Config.tileSize);
 		arrowTower.setPosition(Config.tileSize * 2 + offset, y * Config.tileSize);
 		eggTower.setPosition(Config.tileSize * 3 + offset * 2, y * Config.tileSize);
-		potionTower.setPosition(Config.tileSize * 4 + offset * 3, y * Config.tileSize);
-		currencyTower.setPosition(Config.tileSize * 5 + offset * 4, y * Config.tileSize);
+		//potionTower.setPosition(Config.tileSize * 4 + offset * 3, y * Config.tileSize);
+		//currencyTower.setPosition(Config.tileSize * 5 + offset * 4, y * Config.tileSize);
 
 		btnsBuildTower.add(dirtTower);
 		btnsBuildTower.add(arrowTower);
 		btnsBuildTower.add(eggTower);
-		btnsBuildTower.add(potionTower);
-		btnsBuildTower.add(currencyTower);
+		//btnsBuildTower.add(potionTower);
+		//btnsBuildTower.add(currencyTower);
 	}
 
 	public void render(SpriteBatch spriteBatch) {

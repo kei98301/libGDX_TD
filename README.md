@@ -32,3 +32,5 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 17.02.09:[Minwoo Jang] When Restart and Quit button is pressed, reset.
 	(gamedev-td-core/src/gamedev/input/PauseInputProcessor.java)
 	
+17.02.16:[Minseok Koo] Remove unnecessary towers.
+	(gamedev-td-core/src/gamedev/input/screen/GameUserInterface.java)
