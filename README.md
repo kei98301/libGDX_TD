@@ -36,3 +36,7 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 	
 17.02.16:[Minseok Koo] Remove unnecessary towers.
 	(gamedev-td-core/src/gamedev/input/screen/GameUserInterface.java)
+	
+17.02.16:[Seungwook Choi] As the level goes up, the monsters increase the health. //Not commit yet.
+	(gamedev-td-core/src/gamedev/entity/Enemy.java)
+	(gamedev-td-core/src/gamedev/entity/GameState.java)
