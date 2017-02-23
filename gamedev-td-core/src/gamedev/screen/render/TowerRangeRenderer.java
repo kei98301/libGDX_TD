@@ -18,6 +18,16 @@ public class TowerRangeRenderer extends ShapeRenderer {
 		setColor(1, 1, 1, .5f);
 	}
 	
+	//add(2017.02.16 19:28 By ChoYoungIn)
+	//setHighlight color
+	public void setRedColor(){
+		setColor(0.9f, 0.42f, 0.42f, 0.5f);
+	}
+	
+	public void setWhiteColor(){
+		setColor(1, 1, 1, .5f);
+	}
+	
 	public void setTowerClone(Tower towerClone) {
 		this.towerClone = towerClone;
 	}

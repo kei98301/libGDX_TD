@@ -129,6 +129,10 @@ public class TextureFactory {
 			else if(key.equals("gameover")) {
 				path = "assets/img/gameover.png";
 			}
+			//add(2017.02.15 11:33 By ChoYoungIn)
+			else if(key.equals("gamewin")) {
+				path = "assets/img/gamewin.png";
+			}
 			else if(key.equals("lvlselectbg")) {
 				path = "assets/img/lvlSelectBG.png";
 			}
@@ -161,7 +165,11 @@ public class TextureFactory {
 				path = "assets/img/skip_button.png";
 			}
 			
-			
+			//add(2017.02.14 13:16 By ChoYoungIn)
+			//add levelLabel PNG at TextureFactory
+			else if(key.equals("level")){
+				path = "assets/img/level.png";
+			}
 			
 			
 			else{

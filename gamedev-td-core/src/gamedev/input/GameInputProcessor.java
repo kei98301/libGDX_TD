@@ -221,11 +221,19 @@ public class GameInputProcessor extends GDInputProcessor {
 
 		Point point = getGridCoordinate(x, y);
 		userInterface.setHighlightedCell(point);
+		GameState state = GameState.getInstance();
+		//add(2017.02.16 19:28 By ChoYoungIn)
+		//set HighlightColor
+		if(state.isTowerPlaceable(point) == false){
+			userInterface.setRedHighlight();
+		}
+		else userInterface.setWhiteHighlight();
+
 		if (towerToBuild != null){
 			userInterface.setGhostTowerLocation(point);
 			towerToBuild.getPosition().set(MathHelper.PointToVector2(point));
 		}
-	
+		
 		
 // TODO: Don't know what this code is for
 //		GameState state = GameState.getInstance();

@@ -32,6 +32,14 @@ public class GameUserInterface {
 	//add SkipButton  at userInterface
 	GDSprite skipBtn;
 	
+	//add(2017.02.14 13:16 By ChoYoungIn)
+	//add levelLabel at userInterface
+	GDSprite levelLabel;
+	
+	//add(2017.02.16 19:07 By ChoYoungIn)
+	//add red_highlight at userInterface
+	//GDSprite redHighlight;
+	
 	Tower selectedDeployedTower;
 
 	TowerRangeRenderer towerRangeRenderer;
@@ -88,10 +96,19 @@ public class GameUserInterface {
 		tileHighlight = spriteManager.getSprite("highlight");
 		towerBtnHighlight = spriteManager.getSprite("tower_highlight");
 		
+		//add(2017.02.16 19:07 By ChoYoungIn)
+		//add redHighlight
+		//redHighlight = spriteManager.getSprite("red_highlight");
+		
 		//modify(2017.02.06 02:59 By JangMinWoo)
 		//add skip button
 		skipBtn = spriteManager.getSprite("skip_button");	
 		skipBtn.setPosition(560,userInterfaceY+10);
+		
+		//add(2017.02.14 13:16 By ChoYoungIn)
+		//add levelLabel
+		levelLabel = spriteManager.getSprite("level");
+		levelLabel.setPosition(610, userInterfaceY+10);
 		
 		towerRangeRenderer = new TowerRangeRenderer();
 		
@@ -136,27 +153,25 @@ public class GameUserInterface {
 	private void initializeBuildTowerButtons() {
 		btnsBuildTower = new ArrayList<GDSprite>();
 		SpriteManager spriteManager = SpriteManager.getInstance();
-			
-		//modify(2017.02.16 20:35 By MinSeokKoo)
-		//Remove unnecessary towers.
+
 		GDSprite dirtTower = spriteManager.getTower(TowerType.Dirt_Tower);
 		GDSprite arrowTower = spriteManager.getTower(TowerType.Arrow_Tower);
 		GDSprite eggTower = spriteManager.getTower(TowerType.Egg_Tower);
-		//GDSprite potionTower = spriteManager.getTower(TowerType.Potion_Tower);
-		//GDSprite currencyTower = spriteManager.getTower(TowerType.Currency_Tower);
+		GDSprite potionTower = spriteManager.getTower(TowerType.Potion_Tower);
+		GDSprite currencyTower = spriteManager.getTower(TowerType.Currency_Tower);
 
 		int offset = 3, y = 13;
 		dirtTower.setPosition(Config.tileSize, y * Config.tileSize);
 		arrowTower.setPosition(Config.tileSize * 2 + offset, y * Config.tileSize);
 		eggTower.setPosition(Config.tileSize * 3 + offset * 2, y * Config.tileSize);
-		//potionTower.setPosition(Config.tileSize * 4 + offset * 3, y * Config.tileSize);
-		//currencyTower.setPosition(Config.tileSize * 5 + offset * 4, y * Config.tileSize);
+		potionTower.setPosition(Config.tileSize * 4 + offset * 3, y * Config.tileSize);
+		currencyTower.setPosition(Config.tileSize * 5 + offset * 4, y * Config.tileSize);
 
 		btnsBuildTower.add(dirtTower);
 		btnsBuildTower.add(arrowTower);
 		btnsBuildTower.add(eggTower);
-		//btnsBuildTower.add(potionTower);
-		//btnsBuildTower.add(currencyTower);
+		btnsBuildTower.add(potionTower);
+		btnsBuildTower.add(currencyTower);
 	}
 
 	public void render(SpriteBatch spriteBatch) {
@@ -173,6 +188,10 @@ public class GameUserInterface {
 		
 		tileHighlight.draw(spriteBatch);
 		
+		//add(2017.02.16 19:07 By ChoYoungIn)
+		//set visible redHighlight
+		//redHighlight.draw(spriteBatch);
+		
 		uiBackground.draw(spriteBatch);
 		infoBackground.draw(spriteBatch);
 		
@@ -180,11 +199,13 @@ public class GameUserInterface {
 		moneyLabel.draw(spriteBatch);
 		waveLabel.draw(spriteBatch);
 		
-		
-		
 		//add(2017.02.04.18:37 By Jang Minwoo)
 		//set visible skipButton
 		skipBtn.draw(spriteBatch);
+		
+		//add(2017.02.14 13:16 By ChoYoungIn)
+		//set visible levelLabel
+		levelLabel.draw(spriteBatch);
 		
 		// Draw 'build tower' buttons
 		for (GDSprite tower : btnsBuildTower)
@@ -219,6 +240,10 @@ public class GameUserInterface {
 		drawHealthBars(spriteBatch);
 		towerInfoFont.draw(spriteBatch, GameState.getInstance().getMoney()+"", Config.tileSize + 5, 14 * Config.tileSize + 14);
 		towerInfoFont.draw(spriteBatch, TimeHelper.formatSeconds(GameState.getInstance().getRoundTime()), Config.tileSize + 5, 15 * Config.tileSize + 12);
+		
+		//add(2017.02.15 09:52 By ChoYoungIn)
+		//draw level at (650, userInterfaceY+20) (level-1 for PRE_ROUND_WAIT time)
+		towerInfoFont.draw(spriteBatch, GameState.getInstance().getLevel()+"", 650, userInterfaceY+20);
 		
 		spriteBatch.end();
 		
@@ -287,7 +312,6 @@ public class GameUserInterface {
 		return towerBtnHighlight;
 	}
 	
-	
 	//modify(2017.02.05 01:46 By JangMinWoo)
 	//add 'get SkipButton method'  at userInterface
 	public GDSprite getSkipButton(){
@@ -328,9 +352,20 @@ public class GameUserInterface {
 	 */
 	public void setHighlightedCell(Point point) {
 		tileHighlight.setPosition(point.x, point.y);
-		
 	}
-
+	
+	//add(2017.02.16 19:12 By ChoYoungIn)
+	//add setHighlightColor method at userInterface
+	public void setRedHighlight() {
+		towerRangeRenderer.setRedColor();
+	}
+	public void setWhiteHighlight(){
+		towerRangeRenderer.setWhiteColor();
+	}
+	//public void setRedHighlightedCell(Point point) {
+		//redHighlight.setPosition(point.x, point.y);
+	//}
+	
 	/**
 	 * Place a ghost tower on the highlighted cell
 	 * Note that the attack range should be drawn as well
@@ -355,4 +390,5 @@ public class GameUserInterface {
 	}
 }
 
+	
 	

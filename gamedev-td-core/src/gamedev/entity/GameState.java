@@ -136,10 +136,10 @@ public class GameState {
 			instance.depressedCheckSkip(1);
 		}
 		
-		
 		if (roundTime > 0) {
 			roundTime -= delta;
 		}
+		
 		else {
 			roundHasStarted = true;
 			roundTime = ROUND_DURATION;
@@ -166,8 +166,7 @@ public class GameState {
 		for(Projectile projectile : projectiles){
 			projectile.draw(spriteBatch);
 		}
-		spriteBatch.end();
-		
+		spriteBatch.end();	
 	}
 
 	private void displayTowers(SpriteBatch spriteBatch) {
@@ -288,7 +287,13 @@ public class GameState {
 	public void addMoney(int bounty){
 		this.money += bounty;
 	}
-
+	
+	//add(2017.02.15 09:58 By ChoYoungIn)
+	//get level
+	public int getLevel() {
+		return level;
+	}
+	
 	public List<Tower> getDeployedTowers() {
 		return deployedTowers;
 	}
