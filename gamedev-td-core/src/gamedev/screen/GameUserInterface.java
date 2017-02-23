@@ -243,7 +243,7 @@ public class GameUserInterface {
 		
 		//add(2017.02.15 09:52 By ChoYoungIn)
 		//draw level at (650, userInterfaceY+20) (level-1 for PRE_ROUND_WAIT time)
-		towerInfoFont.draw(spriteBatch, GameState.getInstance().getLevel()-1+"", 650, userInterfaceY+20);
+		towerInfoFont.draw(spriteBatch, GameState.getInstance().getLevel()+"", 650, userInterfaceY+20);
 		
 		spriteBatch.end();
 		

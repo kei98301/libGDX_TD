@@ -21,7 +21,7 @@ public class GameScreen extends GDScreen {
 	//add(2017.02.15 11:05 By ChoYoungIn)
 	//declare GameWinScreen
 	GameWinScreen gameWinScreen;
-	int max_level = 6;
+	int max_level = 11;
 	
 	private GameState gameState;
 	
