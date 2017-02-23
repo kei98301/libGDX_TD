@@ -57,7 +57,7 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 	(gamedev-td-core/src/gamedev/screen/PauseScreen.java)
 	(gamedev-td-core/src/gamedev/screen/LvlSelectScreen.java)
 	(gamedev-td-core/src/gamedev/screen/GameOverScreen.java)
-	(gamedev-td-core/src/gamedev/input/GameUserInterface.java)
+	(gamedev-td-core/src/gamedev/screen/GameUserInterface.java)
 	(gamedev-td-core/src/gamedev/td/helper/FontHelper.java)
 
 	(gamedev-td-desktop/assets/img/button_basic.png)
