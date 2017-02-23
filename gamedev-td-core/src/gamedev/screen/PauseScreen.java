@@ -41,18 +41,19 @@ public class PauseScreen extends GDScreen{
 	private void initializeButtons() {
 		buttons = new ArrayList<GDSprite>();
 		SpriteManager spriteManager = SpriteManager.getInstance();
-		
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified User Interface
 		resumeBtn = spriteManager.getSprite("resume_button");
 		resumeBtn.setPosition(150, 380);
 		
 		restartBtn = spriteManager.getSprite("restart_button");
-		restartBtn.setPosition(150, 420);
+		restartBtn.setPosition(150, 425);
 		
 		menuBtn = spriteManager.getSprite("quit2menu_button");
-		menuBtn.setPosition(150, 460);
+		menuBtn.setPosition(150, 470);
 		
 		exitBtn = spriteManager.getSprite("exit_button");
-		exitBtn.setPosition(150, 500);
+		exitBtn.setPosition(150, 515);
 		
 		buttons.add(resumeBtn);
 		buttons.add(restartBtn);
@@ -62,7 +63,9 @@ public class PauseScreen extends GDScreen{
 	}
 	
 	private void initializeFont() {
-		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/Minecraftia.ttf"));
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified Font for UI
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/prstart.ttf"));
 		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
 		parameter.size = 14;
 		parameter.flip = true;
@@ -77,7 +80,9 @@ public class PauseScreen extends GDScreen{
 	@Override
 	public void render(float delta) {
 		// TODO Auto-generated method stub
-		Gdx.gl.glClearColor(0, 0, 0, 1);
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified User Interface
+		Gdx.gl.glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT |
 				(Gdx.graphics.getBufferFormat().coverageSampling?GL20.GL_COVERAGE_BUFFER_BIT_NV:0));
 

@@ -1,21 +1,20 @@
 package gamedev.screen;
 
-import gamedev.input.LvlSelectInputProcessor;
-import gamedev.td.GDSprite;
-import gamedev.td.SpriteManager;
-import gamedev.td.TowerDefense;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
+
+import gamedev.input.LvlSelectInputProcessor;
+import gamedev.td.GDSprite;
+import gamedev.td.SpriteManager;
+import gamedev.td.TowerDefense;
 
 public class LvlSelectScreen extends GDScreen{
 
@@ -39,23 +38,25 @@ public class LvlSelectScreen extends GDScreen{
 		this.inputProcessor = new LvlSelectInputProcessor(towerDefense, this);
 	}
 	
+	//Modified (2017.02.22 15:25 By Minseok Koo)
+	//Modified User Interface
 	private void initializeButtons() {
 		buttons = new ArrayList<GDSprite>();
 		SpriteManager spriteManager = SpriteManager.getInstance();
 		
 		menuBtn = spriteManager.getSprite("back_to_menu_button");
-		menuBtn.setPosition(160,520);
+		menuBtn.setPosition(140,520);
 		
 		map1Btn = spriteManager.getSprite("map1");
-		map1Btn.setPosition(80, 180);
+		map1Btn.setPosition(110, 180);
 		map1Btn.setAlpha(0.7f);
 		
 		map2Btn = spriteManager.getSprite("map2");
-		map2Btn.setPosition(400, 180);
+		map2Btn.setPosition(390, 180);
 		map2Btn.setAlpha(0.7f);
 		
 		map3Btn = spriteManager.getSprite("map3");
-		map3Btn.setPosition(240, 360);
+		map3Btn.setPosition(250, 340);
 		map3Btn.setAlpha(0.7f);
 		
 		buttons.add(menuBtn);
@@ -65,11 +66,12 @@ public class LvlSelectScreen extends GDScreen{
 		
 		background = spriteManager.getSprite("lvlselectbg");
 		background.setPosition(0, 0);
-		
 	}
 	
 	private void initializeFont() {
-		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/Minecraftia.ttf"));
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified Font for UI
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/prstart.ttf"));
 		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
 		parameter.size = 14;
 		parameter.flip = true;
@@ -84,7 +86,9 @@ public class LvlSelectScreen extends GDScreen{
 	@Override
 	public void render(float delta) {
 		// TODO Auto-generated method stub
-		Gdx.gl.glClearColor(0, 0, 0, 1);
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified User Interface
+		Gdx.gl.glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT |
 				(Gdx.graphics.getBufferFormat().coverageSampling?GL20.GL_COVERAGE_BUFFER_BIT_NV:0));
 
