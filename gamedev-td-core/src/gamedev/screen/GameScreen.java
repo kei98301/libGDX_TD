@@ -17,11 +17,22 @@ public class GameScreen extends GDScreen {
 	SpriteBatch spriteBatch;
 	
 	GameOverScreen gameOverScreen;
+	
+	//add(2017.02.15 11:05 By ChoYoungIn)
+	//declare GameWinScreen
+	GameWinScreen gameWinScreen;
+	int max_level = 6;
+	
 	private GameState gameState;
 	
 	public GameScreen(TowerDefense towerDefense) {
 		this.towerDefense = towerDefense;
 		gameOverScreen = towerDefense.getGameOverScreen();
+		
+		//add(2017.02.15 11:05 By ChoYoungIn)
+		//declare GameWinScreen
+		gameWinScreen = towerDefense.getGameWinScreen();
+		
 		gameState = GameState.getInstance();
 		camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		camera.setToOrtho(true);
@@ -43,6 +54,11 @@ public class GameScreen extends GDScreen {
 
 		if(GameState.getInstance().getPlayerLife() <= 0)
 			towerDefense.switchScreen(towerDefense.getGameOverScreen());
+		
+		//add(2017.02.15 11:33 By ChoYoungIn)
+		//show GameWinScreen
+		if(GameState.getInstance().getLevel() > max_level)
+			towerDefense.switchScreen(towerDefense.getGameWinScreen());
 		
 		gameState.render(spriteBatch);		
 		

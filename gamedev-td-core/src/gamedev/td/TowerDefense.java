@@ -3,6 +3,7 @@ package gamedev.td;
 import gamedev.screen.GDScreen;
 import gamedev.screen.GameOverScreen;
 import gamedev.screen.GameScreen;
+import gamedev.screen.GameWinScreen;
 import gamedev.screen.LvlSelectScreen;
 import gamedev.screen.MainMenuScreen;
 import gamedev.screen.PauseScreen;
@@ -12,9 +13,16 @@ import com.badlogic.gdx.Gdx;
 
 public class TowerDefense extends Game {
 
+	//add(2017.02.15 11:18 By ChoYoungIn)
+	//GameWinScreen
+	
 	private MainMenuScreen mainMenuScreen;
 	private GameOverScreen gameOverScreen;
 	private GameScreen gameScreen;
+	
+	//add(2017.02.15 11:18 By ChoYoungIn)
+	private GameWinScreen gameWinScreen;
+	
 	private PauseScreen pauseScreen;
 	private LvlSelectScreen lvlSelectScreen;
 	
@@ -23,6 +31,10 @@ public class TowerDefense extends Game {
 		mainMenuScreen = new MainMenuScreen(this);
 		gameScreen = new GameScreen(this);
 		gameOverScreen = new GameOverScreen(this);
+		
+		//add(2017.02.15 11:18 By ChoYoungIn)
+		gameWinScreen = new GameWinScreen(this);
+		
 		setLvlSelectScreen(new LvlSelectScreen(this));
 		setPauseScreen(new PauseScreen(this));
 		
@@ -82,6 +94,11 @@ public class TowerDefense extends Game {
 	public GameOverScreen getGameOverScreen() {
 		return gameOverScreen;
 	}
+	
+	//add(2017.02.15 11:18 By ChoYoungIn)
+	public GameWinScreen getGameWinScreen() {
+		return gameWinScreen;
+	}
 
 	public void setGameOverScreen(GameOverScreen gameOverScreen) {
 		this.gameOverScreen = gameOverScreen;
@@ -102,4 +119,5 @@ public class TowerDefense extends Game {
 	public void setLvlSelectScreen(LvlSelectScreen lvlSelectScreen) {
 		this.lvlSelectScreen = lvlSelectScreen;
 	}
+
 }
