@@ -1,7 +1,8 @@
 package gamedev.input;
 
-import gamedev.screen.GDScreen;
-import gamedev.screen.MainMenuScreen;
+import gamedev.entity.GameState;
+
+import gamedev.screen.AboutScreen;
 import gamedev.td.GDSprite;
 import gamedev.td.TowerDefense;
 
@@ -11,22 +12,19 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.graphics.Color;
 
-public class MenuInputProcessor extends GDInputProcessor{
+public class AboutInputProcessor extends GDInputProcessor{
 
-
-	private MainMenuScreen mainMenuScreen;
 	List<GDSprite> buttons;
+	private AboutScreen aboutScreen;
 
 	Color red = new Color(1,0,0,.5f);
 	Color white = new Color(1,1,1,.5f);
 
-	
-	public MenuInputProcessor(TowerDefense towerDefense, MainMenuScreen screen){
+	public AboutInputProcessor(TowerDefense towerDefense, AboutScreen aboutScreen){
 		super(towerDefense);
-		this.mainMenuScreen = screen;
+		this.aboutScreen = aboutScreen;
 	}
 	
-		
 	@Override
 	public boolean keyDown(int keycode) {
 		// TODO Auto-generated method stub
@@ -47,36 +45,47 @@ public class MenuInputProcessor extends GDInputProcessor{
 
 	@Override
 	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-		buttons = mainMenuScreen.getButtons();
+		// TODO Auto-generated method stub
+		
+		//modify(2017.02.09 19:51 By JangMinWoo)
+		//reset Stage when clicked QuitToMenu,RESTART
+		GameState instance = GameState.getInstance();
+		
+		buttons = aboutScreen.getButtons();
 		for (int i = 0; i < buttons.size(); i++) {
 			GDSprite sprite = buttons.get(i);
 			
 			if(Gdx.input.isButtonPressed(Buttons.LEFT))
 				if(sprite.contains(screenX, screenY)) {
 					switch(i) {
-					case MainMenuScreen.START_GAME:
-						towerDefense.switchScreen(towerDefense.getLvlSelectScreen());
+				//	case PauseScreen.RESUME:
+				//		towerDefense.switchScreen(towerDefense.getGameScreen());
+				//		break;
+				//	case PauseScreen.RESTART:
+				//		towerDefense.switchScreen(towerDefense.getGameScreen());
+
+						//modify(2017.02.09 19:51 By JangMinWoo)
+						//reset Stage when clicked RESTART
+				//		instance.initialize();
+						
+				//		break;
+					case AboutScreen.MAIN_MENU:
+						towerDefense.switchScreen(towerDefense.getMainMenuScreen());
+						
+						//modify(2017.02.09 19:51 By JangMinWoo)
+						//reset Stage when clicked QuitToMenu
+						instance.initialize();
+						
 						break;
-					case MainMenuScreen.SETTINGS:
-						//added (2017.02.23 by Yeseul Cho)
-						towerDefense.switchScreen(towerDefense.getSettingScreen());
-						break;
-					case MainMenuScreen.ABOUT:
-						//added (2017.02.23 by Yeseul Cho)
-						towerDefense.switchScreen(towerDefense.getAboutScreen());
-						break;
-					case MainMenuScreen.EXIT:
-						System.exit(1);
-						break;
+				//	case AboutScreen.EXIT:
+				//		System.exit(1);
+				//		break;
 					}
 				}
 		}
 		
 		return false;
 	}
-	
-	
-
 
 	@Override
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
@@ -92,7 +101,7 @@ public class MenuInputProcessor extends GDInputProcessor{
 
 	@Override
 	public boolean mouseMoved(int screenX, int screenY) {
-		buttons = mainMenuScreen.getButtons();
+		buttons = aboutScreen.getButtons();
 		for (int i = 0; i < buttons.size(); i++) {
 			GDSprite sprite = buttons.get(i);
 				if(screenX >= sprite.getX() && screenX < sprite.getX() + sprite.getWidth()
@@ -111,4 +120,7 @@ public class MenuInputProcessor extends GDInputProcessor{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 }
+
+	

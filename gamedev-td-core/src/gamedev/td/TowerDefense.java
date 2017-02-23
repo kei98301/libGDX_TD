@@ -7,6 +7,9 @@ import gamedev.screen.GameWinScreen;
 import gamedev.screen.LvlSelectScreen;
 import gamedev.screen.MainMenuScreen;
 import gamedev.screen.PauseScreen;
+//added (2017.02.23 by Yeseul Cho)
+import gamedev.screen.SettingScreen;
+import gamedev.screen.AboutScreen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
@@ -25,6 +28,9 @@ public class TowerDefense extends Game {
 	
 	private PauseScreen pauseScreen;
 	private LvlSelectScreen lvlSelectScreen;
+	//added (2017.02.23 by Yeseul Cho)
+	private SettingScreen settingScreen;
+	private AboutScreen aboutScreen;
 	
 	@Override
 	public void create () {
@@ -37,9 +43,11 @@ public class TowerDefense extends Game {
 		
 		setLvlSelectScreen(new LvlSelectScreen(this));
 		setPauseScreen(new PauseScreen(this));
+		//added (2017.02.23 by Yeseul Cho)
+		setSettingScreen(new SettingScreen(this));
+		setAboutScreen(new AboutScreen(this));
 		
 		switchScreen(mainMenuScreen);
-		
 	}
 	
 	public void switchScreen(GDScreen screen){
@@ -119,5 +127,21 @@ public class TowerDefense extends Game {
 	public void setLvlSelectScreen(LvlSelectScreen lvlSelectScreen) {
 		this.lvlSelectScreen = lvlSelectScreen;
 	}
-
+	
+	//added (2017.02.23 by Yeseul Cho)
+	public SettingScreen getSettingScreen(){
+		return settingScreen;
+	}
+	//added (2017.02.23 by Yeseul Cho)
+	public void setSettingScreen(SettingScreen settingScreen){
+		this.settingScreen = settingScreen;
+	}
+	//added (2017.02.23 by Yeseul Cho)
+	public AboutScreen getAboutScreen(){
+		return aboutScreen;
+	}
+	//added (2017.02.23 by Yeseul Cho)
+	public void setAboutScreen(AboutScreen aboutScreen){
+		this.aboutScreen = aboutScreen;
+	}
 }

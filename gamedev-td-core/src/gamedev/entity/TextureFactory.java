@@ -171,6 +171,24 @@ public class TextureFactory {
 				path = "assets/img/level.png";
 			}
 			
+			//added(2017.02.23 by Yeseul Cho)
+			else if(key.equals("sound_on_button")){
+				path = "assets/img/sound_on.png";
+			}
+
+			//added(2017.02.23 by Yeseul Cho)
+			else if(key.equals("sound_off_button")){
+				path = "assets/img/sound_off.png";
+			}
+			
+			//added(2017.02.23 by Yeseul Cho)
+			else if(key.equals("aboutbg")) {
+				path = "assets/img/aboutBG.png";
+			}
+			//added(2017.02.23 by Yeseul Cho)
+			else if(key.equals("settingbg")) {
+				path = "assets/img/settingsBG.png";
+			}
 			
 			else{
 				return null;

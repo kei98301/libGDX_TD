@@ -28,7 +28,8 @@ public class MainMenuScreen extends GDScreen {
 	
 	GDSprite startGameBtn, settingsBtn, aboutBtn, background, title, exitBtn;
 	
-	public final static int START_GAME = 0, LEVEL_SELECT = 1, ABOUT = 2, EXIT = 3; 
+	//modified(2017.02.23 by Yeseul cho)
+	public final static int START_GAME = 0, SETTINGS = 1, ABOUT = 2, EXIT = 3; 
 	
 	public MainMenuScreen(TowerDefense towerDefense) {
 		camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());

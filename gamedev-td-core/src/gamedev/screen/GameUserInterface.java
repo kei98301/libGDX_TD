@@ -103,12 +103,12 @@ public class GameUserInterface {
 		//modify(2017.02.06 02:59 By JangMinWoo)
 		//add skip button
 		skipBtn = spriteManager.getSprite("skip_button");	
-		skipBtn.setPosition(560,userInterfaceY+10);
+		skipBtn.setPosition(560,userInterfaceY+50);
 		
 		//add(2017.02.14 13:16 By ChoYoungIn)
 		//add levelLabel
 		levelLabel = spriteManager.getSprite("level");
-		levelLabel.setPosition(610, userInterfaceY+10);
+		levelLabel.setPosition(565, userInterfaceY+10);
 		
 		towerRangeRenderer = new TowerRangeRenderer();
 		
@@ -243,11 +243,10 @@ public class GameUserInterface {
 		
 		//add(2017.02.15 09:52 By ChoYoungIn)
 		//draw level at (650, userInterfaceY+20) (level-1 for PRE_ROUND_WAIT time)
-		towerInfoFont.draw(spriteBatch, GameState.getInstance().getLevel()-1+"", 650, userInterfaceY+20);
+		towerInfoFont.setColor(Color.BLACK);
+		towerInfoFont.draw(spriteBatch, GameState.getInstance().getLevel()-1+"", 605, userInterfaceY+20);
 		
 		spriteBatch.end();
-		
-		
 	}
 
 	private void drawTowerInfo(SpriteBatch spriteBatch) {

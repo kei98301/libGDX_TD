@@ -1,6 +1,7 @@
 package gamedev.screen;
 
-import gamedev.input.GameWinInputProcessor;
+import gamedev.input.GDInputProcessor;
+import gamedev.input.AboutInputProcessor;
 import gamedev.td.GDSprite;
 import gamedev.td.SpriteManager;
 import gamedev.td.TowerDefense;
@@ -17,47 +18,36 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
 
-public class GameWinScreen extends GDScreen{
+public class AboutScreen extends GDScreen {
 
 	OrthographicCamera camera;
 	SpriteBatch spriteBatch;
 	BitmapFont font;
 	private List<GDSprite> buttons;
-	public final static int RESTART = 0, MAIN_MENU = 1, EXIT = 2; 
-	GDSprite restartBtn, menuBtn, exitBtn, background;
+	public final static int MAIN_MENU=0;
+	GDSprite menuBtn, exitBtn, background;
 	
-	public GameWinScreen(TowerDefense towerDefense) {
+	public AboutScreen(TowerDefense towerDefense){
 		camera = new OrthographicCamera(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		camera.setToOrtho(true);
-		
 		spriteBatch = new SpriteBatch();
-		
 		spriteBatch.setProjectionMatrix(camera.combined);
 		
 		initializeFont();
 		initializeButtons();
-		this.inputProcessor = new GameWinInputProcessor(towerDefense, this);
+		this.inputProcessor = new AboutInputProcessor(towerDefense, this);
 	}
-	
+
 	private void initializeButtons() {
 		buttons = new ArrayList<GDSprite>();
 		SpriteManager spriteManager = SpriteManager.getInstance();
-		
-		restartBtn = spriteManager.getSprite("restart_button");
-		restartBtn.setPosition(150, 380);
-		
+			
 		menuBtn = spriteManager.getSprite("quit2menu_button");
-		menuBtn.setPosition(150, 420);
+		menuBtn.setPosition(120, 530);
 		
-		exitBtn = spriteManager.getSprite("exit_button");
-		exitBtn.setPosition(150, 460);
-		
-		
-		buttons.add(restartBtn);
 		buttons.add(menuBtn);
-		buttons.add(exitBtn);
 		
-		background = spriteManager.getSprite("gamewin");
+		background = spriteManager.getSprite("aboutbg");
 		background.setPosition(0, 0);
 		
 	}
@@ -78,7 +68,7 @@ public class GameWinScreen extends GDScreen{
 	@Override
 	public void render(float delta) {
 		// TODO Auto-generated method stub
-		Gdx.gl.glClearColor(0, 0, 0, 1);
+		Gdx.gl.glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT |
 				(Gdx.graphics.getBufferFormat().coverageSampling?GL20.GL_COVERAGE_BUFFER_BIT_NV:0));
 
@@ -126,4 +116,7 @@ public class GameWinScreen extends GDScreen{
 		
 	}
 
-}
+
+
+	}
+
