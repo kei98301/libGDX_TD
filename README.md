@@ -71,8 +71,8 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 	(gamedev-td-desktop/assets/img/title.png)
 	(gamedev-td-desktop/assets/img/wave.png)
 
-	gamedev-td-desktop/font/License.txt  (modified)
-	gamedev-td-desktop/font/prstartk.tff (added)
-	gamedev-td-desktop/font/prstart.tff (added)
-	gamedev-td-desktop/font/Sample.png (deleted)
-	gamedev-td-desktop/font/sample (2).png (deleted)
+	(gamedev-td-desktop/font/License.txt  (modified))
+	(gamedev-td-desktop/font/prstartk.tff (added))
+	(gamedev-td-desktop/font/prstart.tff (added))
+	(gamedev-td-desktop/font/Sample.png (deleted))
+	(gamedev-td-desktop/font/sample (2).png (deleted))
