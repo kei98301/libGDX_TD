@@ -6,6 +6,8 @@ import gamedev.td.Config;
 import gamedev.td.GDSprite;
 import gamedev.td.SpriteManager;
 import gamedev.td.helper.MathHelper;
+//added level class
+import gamedev.level.Level;
 
 import java.awt.Point;
 import java.util.List;
@@ -38,7 +40,8 @@ public abstract class Enemy extends Entity {
 	 * @param waypoints
 	 * @return
 	 */
-	public static Enemy createEnemy(EnemyType type) {
+	//added parameter
+	public static Enemy createEnemy(EnemyType type, int Enemylevel) {
 		Enemy enemy = null;
 		
 		GameState state = GameState.getInstance();
@@ -50,7 +53,9 @@ public abstract class Enemy extends Entity {
 		int health;
 		int moneyReward;
 		float speed;
-
+		//added level variable
+		int level = Enemylevel - 1;
+		
 		switch (type) {		
 		
 		
@@ -58,14 +63,16 @@ public abstract class Enemy extends Entity {
 			health = 20;
 			moneyReward = 5;
 			speed = 1.5f;
-			enemy = new Spider(sprite, health, moneyReward, speed, waypointList);
+			//modified
+			enemy = new Spider(sprite, health+level*10, moneyReward, speed, waypointList);
 			return enemy;
 			
 		case Skeleton:
 			health = 50;
 			moneyReward = 8;
 			speed = 1;
-			enemy = new Skeleton(sprite, health, moneyReward, speed, waypointList);
+			//modified
+			enemy = new Skeleton(sprite, health+level*10, moneyReward, speed, waypointList);
 			return enemy;
 			
 		default:

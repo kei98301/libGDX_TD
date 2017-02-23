@@ -219,7 +219,8 @@ public class GameState {
 		if (spawnDelay >= .5 && spawnedEnemies < enemiesToBeSpawned.size()) {
 
 			EnemyType type = Enemy.interpretType(enemiesToBeSpawned.get(spawnedEnemies));
-			Enemy enemy = Enemy.createEnemy(type);
+			//added parameter
+			Enemy enemy = Enemy.createEnemy(type, level);
 			enemies.add(enemy);
 			spawnDelay = 0;
 			++spawnedEnemies;
@@ -283,6 +284,9 @@ public class GameState {
 	
 	public int getMoney() {
 		return money;
+	}
+	public int getlevel(){
+		return this.level;
 	}
 	
 	public void addMoney(int bounty){
