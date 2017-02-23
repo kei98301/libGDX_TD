@@ -18,7 +18,9 @@ public class FontHelper {
 	}
 
 	private static void prepareMinecraftiaFont() {
-		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/Minecraftia.ttf"));
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified Font for UI
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/prstart.ttf"));
 		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
 		parameter.flip = true;
 		

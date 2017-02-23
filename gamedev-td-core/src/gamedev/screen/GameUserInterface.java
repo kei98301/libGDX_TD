@@ -269,7 +269,9 @@ public class GameUserInterface {
 //			towerSprite.draw(spriteBatch);
 //		} 
 		if (towerToPutSprite != null) {
-			towerToPutSprite.setPosition(x + 150, userInterfaceY + 25);
+			//Modified (2017.02.22 15:25 By Minseok Koo)
+			//Modified User Interface(tower icon position)
+			towerToPutSprite.setPosition(x + 180, userInterfaceY + 25);
 			towerToPutSprite.draw(spriteBatch);
 		}
 

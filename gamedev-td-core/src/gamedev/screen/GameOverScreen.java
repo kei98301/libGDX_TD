@@ -1,21 +1,20 @@
 package gamedev.screen;
 
-import gamedev.input.GameOverInputProcessor;
-import gamedev.td.GDSprite;
-import gamedev.td.SpriteManager;
-import gamedev.td.TowerDefense;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator.FreeTypeFontParameter;
+
+import gamedev.input.GameOverInputProcessor;
+import gamedev.td.GDSprite;
+import gamedev.td.SpriteManager;
+import gamedev.td.TowerDefense;
 
 public class GameOverScreen extends GDScreen{
 
@@ -46,11 +45,13 @@ public class GameOverScreen extends GDScreen{
 		restartBtn = spriteManager.getSprite("restart_button");
 		restartBtn.setPosition(150, 380);
 		
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified User Interface(button position)
 		menuBtn = spriteManager.getSprite("quit2menu_button");
-		menuBtn.setPosition(150, 420);
+		menuBtn.setPosition(150, 425);
 		
 		exitBtn = spriteManager.getSprite("exit_button");
-		exitBtn.setPosition(150, 460);
+		exitBtn.setPosition(150, 470);
 		
 		
 		buttons.add(restartBtn);
@@ -63,7 +64,9 @@ public class GameOverScreen extends GDScreen{
 	}
 	
 	private void initializeFont() {
-		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/Minecraftia.ttf"));
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified Font for UI
+		FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("font/prstart.ttf"));
 		FreeTypeFontParameter parameter = new FreeTypeFontParameter();
 		parameter.size = 14;
 		parameter.flip = true;

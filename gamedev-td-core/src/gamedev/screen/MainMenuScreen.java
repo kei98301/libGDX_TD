@@ -46,7 +46,9 @@ public class MainMenuScreen extends GDScreen {
 	
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0, 1);
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified User Interface(Black -> White)
+		Gdx.gl.glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT |
 				(Gdx.graphics.getBufferFormat().coverageSampling?GL20.GL_COVERAGE_BUFFER_BIT_NV:0));
 
@@ -93,18 +95,19 @@ public class MainMenuScreen extends GDScreen {
 		buttons = new ArrayList<GDSprite>();
 		
 		SpriteManager spriteManager = SpriteManager.getInstance();
-		
+		//Modified (2017.02.22 15:25 By Minseok Koo)
+		//Modified User Interface(button position)
 		startGameBtn = spriteManager.getSprite("play_button");
 		startGameBtn.setPosition(150, 380);
 		
 		settingsBtn = spriteManager.getSprite("settings_button");
-		settingsBtn.setPosition(150, 420);
+		settingsBtn.setPosition(150, 425);
 		
 		aboutBtn = spriteManager.getSprite("about_button");
-		aboutBtn.setPosition(150, 460);
+		aboutBtn.setPosition(150, 470);
 		
 		exitBtn = spriteManager.getSprite("exit_button");
-		exitBtn.setPosition(150, 500);
+		exitBtn.setPosition(150, 515);
 		
 		buttons.add(startGameBtn);
 		buttons.add(settingsBtn);
