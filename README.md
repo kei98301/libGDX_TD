@@ -43,6 +43,7 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 	(gamedev-td-core/src/gamedev/entity/GameState.java)
 
 17.02.23:[Minseok Koo] UI of Map, Main menu, Pause screen, Lvl select screen, gameover screen (images, font)
+
 	(gamedev-td-core/src/gamedev/level/Map.java)
 	(gamedev-td-core/src/gamedev/screen/MainMenuScreen.java)
 	(gamedev-td-core/src/gamedev/screen/PauseScreen.java)
