@@ -4,6 +4,9 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 
 [libGDX]: https://libgdx.badlogicgames.com/
 
+## Screenshots
+<img src="/gamedev-td-desktop/assets/screenshot1.png" width="50%" />
+
 ## Collaborated with
  MinSeok Koo([kei98301]), Minwoo Jang([jmw1038]), Youngin Cho([ChoYoungIn]), Seungwook Choi([seungwookchoi]), 
  Yeseul Cho([yscho1219]).
