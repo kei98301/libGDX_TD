@@ -6,7 +6,7 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 
 ## Collaborated with
  MinSeok Koo([kei98301]), Minwoo Jang([jmw1038]), Youngin Cho([ChoYoungIn]), Seungwook Choi([seungwookchoi]), 
- Yeoseul Cho([yscho1219]).
+ Yeseul Cho([yscho1219]).
 
 [kei98301]: https://github.com/kei98301
 [jmw1038]: https://github.com/jmw1038
