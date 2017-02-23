@@ -75,6 +75,47 @@ public class Level {
 		
 				level = new Level(enemies6);
 				break;
+				case 7:
+				int[][] enemies7 = {
+						// instances, enemy type
+						{10, 1}, {10,2}
+					};
+		
+				level = new Level(enemies7);
+				break;
+			case 8:
+				int[][] enemies8 = {
+						// instances, enemy type
+						{10, 1}, {15,2}
+					};
+		
+				level = new Level(enemies8);
+				break;
+			case 9:
+				int[][] enemies9 = {
+						// instances, enemy type
+						{15, 1}, {15,2}
+					};
+		
+				level = new Level(enemies9);
+				break;
+			case 10:
+				int[][] enemies10 = {
+						// instances, enemy type
+						{15, 1}, {20,2}
+					};
+		
+				level = new Level(enemies10);
+				break;
+			case 11:
+				int[][] enemies11 = {
+						// instances, enemy type
+						{20, 1}, {20,2}
+					};
+		
+				level = new Level(enemies11);
+				break;
+				
 		}
 		return level;
 	}
