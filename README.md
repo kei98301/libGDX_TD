@@ -45,7 +45,7 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 
 	(gamedev-td-core/src/gamedev/input/screen/GameUserInterface.java)
 	
-17.02.16:[Seungwook Choi] As the level goes up, the monsters increase the health. //Not commit yet.
+17.02.16:[Seungwook Choi] As the level goes up, the monsters increase the health.
 
 	(gamedev-td-core/src/gamedev/entity/Enemy.java)
 	(gamedev-td-core/src/gamedev/entity/GameState.java)
@@ -85,5 +85,3 @@ Java Game Development Group Project using [libGDX] - Tower Defense in Desktop
 	(gamedev-td-desktop/font/prstart.tff (added))
 	(gamedev-td-desktop/font/Sample.png (deleted))
 	(gamedev-td-desktop/font/sample (2).png (deleted))
-	
-
