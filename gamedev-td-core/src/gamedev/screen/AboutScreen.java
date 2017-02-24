@@ -43,13 +43,14 @@ public class AboutScreen extends GDScreen {
 		SpriteManager spriteManager = SpriteManager.getInstance();
 			
 		menuBtn = spriteManager.getSprite("quit2menu_button");
-		menuBtn.setPosition(120, 530);
+		//modified by Minseok Koo (2017.02.24 14:30)
+		//for UI
+		menuBtn.setPosition(150, 530);
 		
 		buttons.add(menuBtn);
 		
 		background = spriteManager.getSprite("aboutbg");
 		background.setPosition(0, 0);
-		
 	}
 	
 	private void initializeFont() {
