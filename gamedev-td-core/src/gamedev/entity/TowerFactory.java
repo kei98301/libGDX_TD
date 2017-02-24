@@ -73,6 +73,11 @@ public class TowerFactory {
 		case 5: return TowerType.Corrupted_Egg_Tower;
 		case 6: return TowerType.Ice_Arrow_Tower;
 		case 7: return TowerType.Fire_Arrow_Tower;
+		
+		//modify(2017.02.04 23:05 By JangMinWoo)
+		//add SandTower,WoodTower case
+		case 8: return TowerType.Sand_Tower;
+		case 9: return TowerType.Wood_Tower;
 		}
 		return TowerType.Dirt_Tower;
 	}
@@ -93,6 +98,14 @@ public class TowerFactory {
 			return TowerType.Ice_Arrow_Tower;
 		else if(name.equals("Fire Arrow Tower"))
 			return TowerType.Fire_Arrow_Tower;
+		
+		//modify(2017.02.04 23:05 By JangMinWoo)
+		//add SandTower,WoodTower case		
+		else if(name.equals("Sand Tower"))
+			return TowerType.Sand_Tower;		
+		else if(name.equals("Wood Tower"))
+			return TowerType.Wood_Tower;
+				
 		return null; 
 	}
 

@@ -6,6 +6,7 @@ import gamedev.entity.TowerFactory;
 import gamedev.entity.TowerFactory.TowerType;
 import gamedev.entity.tower.ArrowTower;
 import gamedev.entity.tower.DirtTower;
+import gamedev.entity.tower.EggTower;
 import gamedev.screen.GameScreen;
 import gamedev.screen.GameUserInterface;
 import gamedev.td.Config;
@@ -72,6 +73,10 @@ public class GameInputProcessor extends GDInputProcessor {
 			// Step 1
 			selectTowerToUpgrade(x, y, pointer, button);
 			
+			//Modify(2017.02.11 12:16 By JangMinWoo)
+			//add SingleUpgradeTower
+			SingleUpgradeTower(x,y,pointer,button);
+			
 			
 			//Modify(2017.02.04 23:39 By JangMinWoo)
 			//Pressed Skip Button
@@ -91,6 +96,12 @@ public class GameInputProcessor extends GDInputProcessor {
 		towerToBuild = null;
 		userInterface.setTowerRange(null);
 		userInterface.setGhostTower(null);
+		
+		//modify(2017.02.10 22:31 By JangMinWoo)
+		//reset upgradeBtn
+		userInterface.setTowerToUpgrade(null);
+		selectedTower = null;
+		
 		System.out.println("[Inform] Nothing selected");
 
 	}
@@ -166,8 +177,15 @@ public class GameInputProcessor extends GDInputProcessor {
 
 			if (sprite.contains(x, y)) {
 				selectedTower = tower;
-				userInterface.setTowerToUpgrade(tower);
-				System.out.println("[Input] User selected a tower, " + selectedTower.getTowerName() + " found at " + selectedTower.getPosition());
+				
+				
+				//modify(2017.02.10 02:02 By JangMinWoo)
+				//Hand over the towerToUpgrade to userInterface instance
+				userInterface.setTowerToUpgrade(selectedTower);
+				
+				//modify(2017.02.23 19:29 By JangMinWoo)
+				//Print current LEVEL
+				System.out.println("[Input] User selected a tower, " + selectedTower.getTowerName() + " found at " + selectedTower.getPosition() + " current LEVEL is "+ (selectedTower.getLevel()+1));
 			}
 		}
 	}
@@ -187,6 +205,30 @@ public class GameInputProcessor extends GDInputProcessor {
 			instance.pressedCheckSkip(1);	
 		}	
 			
+	}
+	
+	//Modify(2017.02.11 12:16 By JangMinWoo)
+	//define SingleUpgradeTower
+	public void SingleUpgradeTower(int x,int y, int point,int button){
+				
+		GDSprite sprite = userInterface.getUpgradeBtn();
+		if(sprite.contains(x,y)){
+					
+			Tower towerToUpgrade = userInterface.getSelectedDeployedTower();
+			if(towerToUpgrade!=null){
+					
+				GameState instance = GameState.getInstance();
+				if(instance.canUpgradeTower(towerToUpgrade)){
+						
+					instance.upgradeTower(towerToUpgrade);
+					userInterface.UpgradeTower();
+					System.out.println("Successed upgrade");	
+						
+					//towerToBuild=null;
+					selectedTower=null;
+				}
+			}
+		}
 	}
 	
 	

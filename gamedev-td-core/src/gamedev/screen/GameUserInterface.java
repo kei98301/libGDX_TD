@@ -86,12 +86,11 @@ public class GameUserInterface {
 
 		
 		//modify(2017.02.06 02:59 By JangMinWoo)
-		//edit (Y)position of upgradeBtn,selBtn (120->100)
+		//edit (Y)position of upgradeBtn,selBtn (120->110), upgradeToWood,Sand,......(120->130)
 		upgradeBtn = spriteManager.getSprite("upgrade_button");
-		upgradeBtn.setPosition(300, userInterfaceY + 100);
-
+		upgradeBtn.setPosition(300, userInterfaceY + 110);
 		sellBtn = spriteManager.getSprite("sell_button");
-		sellBtn.setPosition(425, userInterfaceY + 100);
+		sellBtn.setPosition(425, userInterfaceY + 110);
 
 		tileHighlight = spriteManager.getSprite("highlight");
 		towerBtnHighlight = spriteManager.getSprite("tower_highlight");
@@ -131,23 +130,25 @@ public class GameUserInterface {
 	private void initializeUpgradeButtons() {
 		SpriteManager spriteManager = SpriteManager.getInstance();
 		
+		//modify(2017.02.24 02:36 By JangMinWoo)
+		//edit Y Position of TowerToUpgrade
 		upgradeToWood = spriteManager.getSprite("upgrade_to_wood");
-		upgradeToWood.setPosition(300, userInterfaceY + 120);
+		upgradeToWood.setPosition(300, userInterfaceY + 130);
 
 		upgradeToSand = spriteManager.getSprite("upgrade_to_sand");
-		upgradeToSand.setPosition(425, userInterfaceY + 120);
+		upgradeToSand.setPosition(425, userInterfaceY + 130);
 
 		upgradeToFireArrow = spriteManager.getSprite("upgrade_to_fireArrow");
-		upgradeToFireArrow.setPosition(300, userInterfaceY + 120);
+		upgradeToFireArrow.setPosition(300, userInterfaceY + 130);
 
 		upgradeToIceArrow = spriteManager.getSprite("upgrade_to_iceArrow");
-		upgradeToIceArrow.setPosition(425, userInterfaceY + 120);
+		upgradeToIceArrow.setPosition(425, userInterfaceY + 130);
 
 		upgradeToSlime = spriteManager.getSprite("upgrade_to_slime");
-		upgradeToSlime.setPosition(300, userInterfaceY + 120);
+		upgradeToSlime.setPosition(300, userInterfaceY + 130);
 
 		upgradeToCorruptedEgg = spriteManager.getSprite("upgrade_to_cegg");
-		upgradeToCorruptedEgg.setPosition(425, userInterfaceY + 120);
+		upgradeToCorruptedEgg.setPosition(425, userInterfaceY + 130);
 	}
 	
 	private void initializeBuildTowerButtons() {
@@ -214,7 +215,12 @@ public class GameUserInterface {
 		if (towerToBuild != null){
 			// Draw tower descriptions
 			drawTowerInfo(spriteBatch);
-		}else if (towerToUpgrade != null){
+			
+			
+		//modify(2017.02.10 22:24 By JangMinWoo)
+		//set visible upgrade,sellBtn and upgradedTowerBtn
+		//}else if (towerToUpgrade != null){
+		}if	 (towerToUpgrade != null){	
 			upgradeBtn.draw(spriteBatch);
 			costFont.draw(spriteBatch, selectedDeployedTower.getUpgradeCost() + "", upgradeBtn.getX() + 85, upgradeBtn.getY() + 6);
 			sellBtn.draw(spriteBatch);
@@ -336,7 +342,10 @@ public class GameUserInterface {
 	}
 
 	public void setTowerToUpgrade(Tower tower) {
-		
+		//modify(2017.02.10 22:25 By JangMinWoo)
+		//set clicked tower as TowerToUpgrade 		
+		towerToUpgrade = tower;
+		selectedDeployedTower = tower;
 	}
 
 	/**
@@ -388,6 +397,24 @@ public class GameUserInterface {
 		if(towerToBuild != null)
 			towerRangeRenderer.setAttackRange(towerToBuild.getAttackRange());
 		else towerRangeRenderer.setAttackRange(0);
+	}
+	
+	//modify(2017.02.24 01:46 By JangMinWoo)
+	//add method	
+	public Tower getSelectedDeployedTower(){
+		return this.selectedDeployedTower;
+	}
+	public GDSprite getUpgradeBtn(){
+		return this.upgradeBtn;
+	}
+
+	//modify(2017.02.05 01:46 By JangMinWoo)
+	//define UpgradeTower Method
+	public void UpgradeTower(){
+		GameState instance = GameState.getInstance();
+		instance.getDeployedTowers().remove(selectedDeployedTower);
+		this.selectedDeployedTower.upgrade();
+		instance.getDeployedTowers().add(selectedDeployedTower);
 	}
 }
 

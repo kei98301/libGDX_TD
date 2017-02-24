@@ -245,11 +245,26 @@ public class GameState {
 			deployedTowers.add(tower);
 		}
 	}
+	
+	//modify(2017.02.23 19:05 By JangMinWoo)
+	//define upgradeTower in GameState
+	public void upgradeTower(Tower tower){
+		if(canUpgradeTower(tower)){
+			money-=tower.getUpgradeCost();
+		}
+	}	
 
 	public boolean canBuyTower(Tower tower) {
 		return money >= tower.getCost();
 	}
+	
+	//modify(2017.02.23 19:05 By JangMinWoo)
+	//define canUpgradeTower
+	public boolean canUpgradeTower(Tower tower){
+		return money >= tower.getUpgradeCost();
+	}
 
+	
 	public void setWaveSpawnTime(float waveSpawnTime) {
 		if (waveSpawnTime < 0)
 			this.roundTime = 10;

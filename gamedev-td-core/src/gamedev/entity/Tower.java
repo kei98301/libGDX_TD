@@ -33,7 +33,11 @@ public abstract class Tower extends Entity {
 		setAttackCooldown(attackRate);
 		targets = new ArrayList<Enemy>();
 		center = new Point2D.Float();
-		upgradeCost = 0;
+	
+		//modify(2017.02.23 19:01 By JangMinWoo)
+		//set SingleUpgrade Cost
+		upgradeCost = 20;
+		
 		sellCost = 0;
 	}
 
