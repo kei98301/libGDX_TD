@@ -1,9 +1,8 @@
 package gamedev.screen;
 
-import gamedev.input.GDInputProcessor;
-import gamedev.td.TowerDefense;
-
 import com.badlogic.gdx.Screen;
+
+import gamedev.input.GDInputProcessor;
 
 public abstract class GDScreen implements Screen{
 	protected GDInputProcessor inputProcessor;

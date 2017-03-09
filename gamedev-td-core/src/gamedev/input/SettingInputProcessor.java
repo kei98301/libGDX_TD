@@ -1,17 +1,15 @@
 package gamedev.input;
 
-import gamedev.entity.GameState;
-
-import gamedev.screen.SettingScreen;
-import gamedev.td.GDSprite;
-import gamedev.td.TowerDefense;
-import gamedev.td.helper.BGMHelper;
-
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.graphics.Color;
+
+import gamedev.entity.GameState;
+import gamedev.screen.SettingScreen;
+import gamedev.td.GDSprite;
+import gamedev.td.TowerDefense;
 
 public class SettingInputProcessor extends GDInputProcessor{
 

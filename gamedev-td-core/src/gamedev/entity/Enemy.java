@@ -1,19 +1,17 @@
 package gamedev.entity;
 
+import java.awt.Point;
+import java.util.List;
+
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
+
 import gamedev.entity.enemy.Skeleton;
 import gamedev.entity.enemy.Spider;
 import gamedev.td.Config;
 import gamedev.td.GDSprite;
 import gamedev.td.SpriteManager;
 import gamedev.td.helper.MathHelper;
-//added level class
-import gamedev.level.Level;
-
-import java.awt.Point;
-import java.util.List;
-
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector2;
 
 public abstract class Enemy extends Entity {
 	protected enum Dir {

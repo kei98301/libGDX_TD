@@ -1,6 +1,5 @@
 package gamedev.entity.tower;
 
-import gamedev.entity.Tower;
 import gamedev.td.GDSprite;
 
 public class FireArrowTower extends ArrowTower {

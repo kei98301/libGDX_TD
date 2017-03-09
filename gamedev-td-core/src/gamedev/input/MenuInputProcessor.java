@@ -1,15 +1,14 @@
 package gamedev.input;
 
-import gamedev.screen.GDScreen;
-import gamedev.screen.MainMenuScreen;
-import gamedev.td.GDSprite;
-import gamedev.td.TowerDefense;
-
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.graphics.Color;
+
+import gamedev.screen.MainMenuScreen;
+import gamedev.td.GDSprite;
+import gamedev.td.TowerDefense;
 
 public class MenuInputProcessor extends GDInputProcessor{
 

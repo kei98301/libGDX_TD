@@ -14,7 +14,7 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class SpriteManager {
 	private static SpriteManager instance;
-	private static HashMap<String, Texture> tiles, towers, enemies;
+	private static HashMap<String, Texture> tiles, towers; //enemies;
 
 	GDSprite highlightTile, uiSprite, towerLabel, heartSprite[], emeraldSprite,
 			waveSprite, uiTowerHighlight, redHighlight, clonedTowerSprite,

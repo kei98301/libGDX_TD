@@ -12,7 +12,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class TowerRangeRenderer extends ShapeRenderer {
 	private float attackRange = 0;
-	private Tower towerToBuild, towerClone;
+	private Tower towerToBuild; //towerClone;
 
 	public TowerRangeRenderer() {
 		setColor(1, 1, 1, .5f);
@@ -28,9 +28,9 @@ public class TowerRangeRenderer extends ShapeRenderer {
 		setColor(1, 1, 1, .5f);
 	}
 	
-	public void setTowerClone(Tower towerClone) {
+	/*public void setTowerClone(Tower towerClone) {
 		this.towerClone = towerClone;
-	}
+	}*/
 	
 	public void setTowerToBuild(Tower towerToBuild) {
 		this.towerToBuild = towerToBuild;
