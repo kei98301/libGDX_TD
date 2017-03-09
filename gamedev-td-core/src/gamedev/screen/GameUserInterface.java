@@ -102,7 +102,7 @@ public class GameUserInterface {
 		//modify(2017.02.06 02:59 By JangMinWoo)
 		//add skip button
 		skipBtn = spriteManager.getSprite("skip_button");	
-		skipBtn.setPosition(560,userInterfaceY+50);
+		skipBtn.setPosition(565,userInterfaceY+50);
 		
 		//add(2017.02.14 13:16 By ChoYoungIn)
 		//add levelLabel
